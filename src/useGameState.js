@@ -12,7 +12,11 @@ const useGameState = () => {
       const timerId = setTimeout(() => {
         setSecondsLeft(secondsLeft - 1);
       }, 1000);
+<<<<<<< HEAD
       // return () => clearTimeout(timerId);
+=======
+//       return () => clearTimeout(timerId);
+>>>>>>> 0bc12da14cc7007aa6320b701f709b02056e5d9a
     }
   });
 
