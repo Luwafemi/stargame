@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import utils from './utils.js';
+import { useState, useEffect } from "react";
+import utils from "./utils.js";
+
 //Custom Hook
 const useGameState = () => {
   const [stars, setStars] = useState(utils.random(1, 9));
@@ -9,16 +10,11 @@ const useGameState = () => {
 
   useEffect(() => {
     if (secondsLeft > 0 && availableNums != 0) {
-      const timerId = setTimeout(() => {
+      setTimeout(() => {
         setSecondsLeft(secondsLeft - 1);
       }, 1000);
-<<<<<<< HEAD
-      // return () => clearTimeout(timerId);
-=======
-//       return () => clearTimeout(timerId);
->>>>>>> 0bc12da14cc7007aa6320b701f709b02056e5d9a
     }
-  });
+  }, [secondsLeft]);
 
   const setGameState = (newCandidateNums) => {
     if (utils.sum(newCandidateNums) !== stars) {
