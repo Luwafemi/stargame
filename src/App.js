@@ -11,7 +11,7 @@ const Game = (props) => {
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars;
   const gameStatus =
-    availableNums == 0 ? "won" : secondsLeft == 0 ? "lost" : "active";
+    availableNums.length === 0 ? "won" : secondsLeft === 0 ? "lost" : "active";
 
   const numberStatus = (number) => {
     if (!availableNums.includes(number)) {
@@ -24,12 +24,12 @@ const Game = (props) => {
   };
 
   const onNumberClick = (number, currentStatus) => {
-    if (currentStatus == "used" || secondsLeft == 0) {
+    if (currentStatus === "used" || secondsLeft === 0) {
       return;
     }
 
     const newCandidateNums =
-      currentStatus == "available"
+      currentStatus === "available"
         ? candidateNums.concat(number)
         : candidateNums.filter((cn) => cn !== number);
 
@@ -40,11 +40,10 @@ const Game = (props) => {
     <div className="game">
       <div className="help">
         Pick one or more numbers that sum to the number of stars.{" "}
-      </div>{" "}
+      </div>
       <div className="body">
         <div className="left">
-          {" "}
-          {gameStatus != "active" ? (
+          {gameStatus !== "active" ? (
             <PlayAgain onClick={props.resetGame} gameStatus={gameStatus} />
           ) : (
             <StarNumbers stars={stars} />
@@ -61,9 +60,9 @@ const Game = (props) => {
               />
             ))}
           </div>
-        </div>{" "}
-      </div>{" "}
-      <div className="timer"> Time Remaining: {secondsLeft} </div>{" "}
+        </div>
+      </div>
+      <div className="timer"> Time Remaining: {secondsLeft} </div>
     </div>
   );
 };

@@ -1,13 +1,23 @@
-html {
+body {
   background-color: black;
-}
-#root {
-  background-color: black;
+  min-height: 100vh;
   display: flex;
-  height: 90vh;
   align-items: center;
   justify-content: center;
+  margin: 0px;
 }
+
+/* @media (min-width: 1000px) {
+  body {
+    min-height: 100vh;
+  }
+} */
+
+/* @media (min-height: 593px) {
+  body {
+    min-height: 100vh;
+  }
+} */
 
 .game {
   margin: 0 auto;
@@ -22,6 +32,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-block: 20px;
 }
 
 .help {
@@ -36,7 +47,7 @@ html {
   justify-content: center;
   text-align: center;
   width: 280px;
-  height: 270px;
+  height: 250px;
   border: thin solid #ddd;
   border-radius: 10px;
   padding: 10px;
@@ -76,8 +87,8 @@ html {
   color: #000;
   background-color: #eee;
   border: thin solid #ddd;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   margin: 18px;
   font-size: 15px;
 }
